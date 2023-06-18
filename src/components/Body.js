@@ -1,7 +1,9 @@
 // Body part- 2
-import { restaurantList } from "../utils/constants";
+import { restaurantList,swiggy_api_URL } from "../utils/constants";
 import RestaurantCard from "./RestaurantCard";
-import { useState } from "react";
+import { useState, useEffect} from "react";
+import Shimmer from "./Shimmer";
+
 
 
 function filterData(searchText, restaurants) {
@@ -14,30 +16,59 @@ function filterData(searchText, restaurants) {
 
 const Body=()=>{
 
-        const [restaurants,setrestaurants]=useState(restaurantList);
-        //  let searchTxt ="hi";
+       
         const [searchText,setSearchText]=useState();
 
+        // fetch()
+        // const [restaurants,setrestaurants]=useState([]);
+        const [allRestaurants, setAllRestaurants] = useState([]);
+        const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+        // console.log(restaurants);
 
-    return (
+        useEffect(()=>{
+           getRestaurants();
+        },[]);
+
+        
+        async function getRestaurants() {
+          // handle the error using try... catch
+          try {
+            const data = await fetch(swiggy_api_URL);
+            const json = await data.json();
+            // updated state variable restaurants with Swiggy API data
+
+            setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+            setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+          } catch (error) {
+            console.log(error);
+          }
+        }
+
+
+    // if(filteredRestaurants.length==0) return <h1>No Restaurant match your filter!!</h1>
+
+
+    return (allRestaurants.length==0)?<Shimmer/>: (
        
        <>
         <div className="search-container">
+
             <input type="text" className="search-input" placeholder="Seakrch" 
              value={searchText} onChange={(e)=>{ setSearchText(e.target.value); }} />
 
             <button className="search-btn" onClick={()=>{  
               // need to filter the data 
-              const data =filterData(searchText,restaurants);
+              const data =filterData(searchText,allRestaurants);
               // update the state -restaurants
-              setrestaurants(data);
+              setFilteredRestaurants(data);
             }}>
             Search</button>
         </div>
 
         <div className="restaurant-list">
-            {
-                restaurants.map((restraunt) =>{
+            {   
+                
+                filteredRestaurants.map((restraunt) =>{
                     return(
                           <RestaurantCard {...restraunt.data} key={restraunt.data.id} />
                     );
@@ -51,26 +82,3 @@ const Body=()=>{
 };
 
 export default Body;
-
-
-// const BurgerKing={
-//     name:"Burger King",
-//     image:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Burger_King_logo_%281999%29.svg/768px-Burger_King_logo_%281999%29.svg.png",
-//     cusines:["Burger","American"],
-//     rating:"4.2"
-// }
-
-
-// const RestrauntCard=()=>{
-//     return (
-//         <div className="card">
-
-//             <img src={BurgerKing.image}/>
-//             <h2>{BurgerKing.name}</h2>
-//             <h3>{BurgerKing.cusines.join(",   ")}</h3>
-//             <h4>{BurgerKing.rating} stars </h4>
-
-//         </div>
-
-//     );
-// };
