@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
+import Logo from "../assets/img/foodvilla.jpg";
+import { Link } from "react-router-dom";
 
 
 const LoggedInUser =()=>{
@@ -13,20 +15,20 @@ const Header = () => {
    // use useState for user logged in or logged out
    const [isLoggedin, setIsLoggedin] = useState(true);
 
-
-
   return (
     <div className="header">
 
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL} />
+        {/* <img className="logo" src={LOGO_URL} /> */}
+        <img className="logo" src={Logo} />
       </div>
       
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
+          
+          <Link to="/"> <li>Home</li> </Link>
+          <Link to="/about"> <li>About Us</li> </Link>
+          <Link to="/contact"><li>Contact Us</li></Link> 
           <li>Cart</li>
         </ul>
       </div>
