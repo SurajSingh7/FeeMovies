@@ -5,6 +5,7 @@ import { useState, useEffect} from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
 
 const Body=()=>{
@@ -36,6 +37,12 @@ const Body=()=>{
             console.log(error);
           }
         }
+
+      const isOnline=useOnline();
+      if(isOnline==false){
+        return <h1>offline</h1>
+      }
+    
 
 
     // if(filteredRestaurants.length==0) return <h1>No Restaurant match your filter!!</h1>
