@@ -1,4 +1,4 @@
-import React  from "react";
+import React, { lazy }  from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -9,6 +9,11 @@ import Error from "./components/Error";
 import Contact from "./components/Contact";
 import Profile from "./components/Profile";
 import RestaurantMenu from "./components/RestaurantMenu";
+
+// import Instamart from "./components/Instamart";
+const Instamart=lazy(()=>import("./components/Instamart"));
+
+
 
 
 const AppLayout=()=>{
@@ -48,6 +53,10 @@ const appRouter=createBrowserRouter([
             {
                 path:"/restaurant/:resId",
                 element:<RestaurantMenu/>
+            },
+            {
+                path:"/instamart",
+                element:<Instamart/>
             }
         ]   
     }
