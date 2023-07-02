@@ -56,7 +56,7 @@ const Body=()=>{
             <input type="text" className="search-input" placeholder="Seakrch" 
              value={searchText} onChange={(e)=>{ setSearchText(e.target.value); }} />
 
-            <button className="search-btn p-2 m-2 bg-green-400 hover:bg-gray-500 text-black rounded-md" onClick={()=>{  
+            <button className="search-btn p-2 m-2 bg-purple-400 hover:bg-gray-500 text-black rounded-md" onClick={()=>{  
               // need to filter the data 
               const data =filterData(searchText,allRestaurants);
               // update the state -restaurants
