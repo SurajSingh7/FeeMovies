@@ -9,7 +9,10 @@ import Error from "./components/Error";
 import Contact from "./components/Contact";
 import Profile from "./components/Profile";
 import RestaurantMenu from "./components/RestaurantMenu";
-import Navigation from "./components/Navigation";
+import  Navigation from "./components/Navigation";
+import { M2 } from "./components/MenuMovies";
+import { Bollywood,SouthHindiDubbed,MostViewedMovies,EnglishMovies } from "./components/MenuMovies";
+import { PopularMovies,HollywoodHindi,ShortMovies } from "./components/MenuMovies";
 
 
 
@@ -45,8 +48,32 @@ const appRouter=createBrowserRouter([
                   ],
             },
             {
-                path:"/contact",
-                element:<Contact/>
+                path:"/bollywood",
+                element:< Bollywood/>
+            },
+            {
+                path:"/southHindiDubbed",
+                element:< SouthHindiDubbed/>
+            },
+            {
+                path:"/mostViewedMovies",
+                element:< MostViewedMovies/>
+            },
+            {
+                path:"/englishMovies",
+                element:< EnglishMovies/>
+            },
+            {
+                path:"/popularMovies",
+                element:< PopularMovies/>
+            },
+            {
+                path:"/hollywoodHindi",
+                element:< HollywoodHindi/>
+            },
+            {
+                path:"/shortMovies",
+                element:< ShortMovies/>
             },
             {
                 path:"/restaurant/:resId",

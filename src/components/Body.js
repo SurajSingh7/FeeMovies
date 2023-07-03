@@ -2,10 +2,9 @@
 import { restaurantList,swiggy_api_URL } from "../utils/constants";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect} from "react";
-import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
-import useOnline from "../utils/useOnline";
+import Shimmer from "./Shimmer";
 
 
 const Body=()=>{
@@ -13,11 +12,9 @@ const Body=()=>{
        
         const [searchText,setSearchText]=useState();
 
-        // fetch()
-        // const [restaurants,setrestaurants]=useState([]);
+      
         const [allRestaurants, setAllRestaurants] = useState([]);
         const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-        // console.log(restaurants);
 
         useEffect(()=>{
            getRestaurants();
@@ -31,49 +28,46 @@ const Body=()=>{
             const json = await data.json();
             // updated state variable restaurants with Swiggy API data
 
-            setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-            setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+            // setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+            // setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+            
+            setAllRestaurants(restaurantList);
+            setFilteredRestaurants(restaurantList);
+            
           } catch (error) {
             console.log(error);
           }
         }
 
-      const isOnline=useOnline();
-      if(isOnline==false){
-        return <h1>offline</h1>
-      }
-    
-
-
-    // if(filteredRestaurants.length==0) return <h1>No Restaurant match your filter!!</h1>
-
 
     return (allRestaurants.length==0)?<Shimmer/>: (
        
        <>
-        <div className="search-container p-5 bg-pink-50 my-5 ">
+        <div className="search-container p-6 h-8 bg-pink-50  items-center flex justify-center ">
 
-            <input type="text" className="search-input" placeholder="Seakrch" 
+            <input type="text" className="search-input w-[500] h-8 flex " placeholder="  Search" 
              value={searchText} onChange={(e)=>{ setSearchText(e.target.value); }} />
 
-            <button className="search-btn p-2 m-2 bg-purple-400 hover:bg-gray-500 text-black rounded-md" onClick={()=>{  
+            <button className="search-btn p-1  bg-gray-500 hover:bg-pink-400 text-black  " onClick={()=>{  
               // need to filter the data 
               const data =filterData(searchText,allRestaurants);
               // update the state -restaurants
+              // {(searchText==="")? setFilteredRestaurants(allRestaurants): setFilteredRestaurants(data);}
               setFilteredRestaurants(data);
             }}>
             Search</button>
+
         </div>
 
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap items-center justify-center">
             {   
-                
+              
+
                 filteredRestaurants.map((restaurant) =>{
                     return(
                        <Link to={"/restaurant/"+restaurant.data.id} key={restaurant.data.id} >
                           <RestaurantCard {...restaurant.data} />
                         </Link>  
-                      // <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
                     );
                 })
             }

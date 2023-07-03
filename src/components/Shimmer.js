@@ -1,11 +1,35 @@
 const Shimmer =()=>{
     return(
-        // <h1>shimmer ui Loading </h1>
-        <div className="restaurant-list">
-           { Array(10).fill("").map((e,index)=> { return <div key={index} className="shimmer-card"></div>} ) }
+       
+        <>
+        <div className="search-container p-6 h-8 bg-gray-200  items-center flex justify-center "> </div>
+        
+        <div className=" flex flex-wrap ">
+           { Array(15).fill("").map((e,index)=> { return (
+           <div key={index} className="card w-56 h-80 p-2 m-2 shadow-lg bg-gray-300"></div>)} ) }
 
         </div>    
+
+        </>
     )
 }
 
 export default Shimmer;
+
+
+
+// className="card w-56 h-80 p-2 m-2 shadow-lg bg-gray-300"
+
+// const Shimmer =()=>{
+//     return(
+       
+//         <div className="search-container p-6 h-8 bg-pink-50 my- items-center flex justify-center "> </div>
+        
+//         <div className=" flex flex-wrap ">
+          
+
+//         </div>    
+//     )
+// }
+
+// export default Shimmer;
