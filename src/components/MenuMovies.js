@@ -3,7 +3,7 @@ import MoviesFilter from "./MoviesFilter";
  export const Bollywood=()=>{
 
     return  (
-         <MoviesFilter moviestext={"m"}/>
+         <MoviesFilter moviestext={"sid"}/>
     );
 };
 

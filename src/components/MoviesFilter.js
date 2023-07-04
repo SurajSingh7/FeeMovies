@@ -13,9 +13,11 @@ const MoviesFilter=({moviestext})=>{
        console.log(moviestext);
 
         const [searchText,setSearchText]=useState(moviestext);
-
-      
         const [allRestaurants, setAllRestaurants] = useState([]);
+
+        const[page,setPage]=useState(1);
+        const ItemInOnePage=5;
+
 
         useEffect(()=>{
            getRestaurants();
@@ -45,10 +47,10 @@ const MoviesFilter=({moviestext})=>{
              <h1>{searchText}</h1>
        </div>
 
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap justify-center">
             {   
                 
-                data.map((restaurant) =>{
+                data.slice(ItemInOnePage*(page-1),page*ItemInOnePage).map((restaurant) =>{
                     return(
                        <Link to={"/restaurant/"+restaurant.data.id} key={restaurant.data.id} >
                           <RestaurantCard {...restaurant.data} />
@@ -56,6 +58,27 @@ const MoviesFilter=({moviestext})=>{
                     );
                 })
             }
+
+
+               {
+                 <div className="search-container p-6 w-[1280] h-8 bg-pink-50  items-center flex justify-center ">
+
+                   <button className="search-btn p-1  bg-gray-500 hover:bg-pink-400 text-black rounded-sm  " onClick={()=>{  
+                      {(page<=1)?setPage(Math.ceil(data.length/ItemInOnePage)):setPage(page-1)}
+                 }}>
+                 Prev</button>
+
+                <div className="bg-white p-1 pl-3 pr-4"> <h1>  {page} of {Math.ceil(data.length/ItemInOnePage)}  </h1> </div>
+
+                 <button className="search-btn p-1  bg-gray-500 hover:bg-pink-400 text-black rounded-sm " onClick={()=>{  
+                   {(page>=Math.ceil(data.length/ItemInOnePage))?setPage(1):setPage(page+1)}
+                 }}>
+                 Next</button>
+     
+                 </div>
+
+              }
+
         
         </div>
 
