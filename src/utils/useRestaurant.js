@@ -7,7 +7,6 @@ const useRestaurant=(resId)=>{
   
     
     const [restaurant, setRestaurant] = useState(null); 
-    const [menuItems, setMenuItems] = useState([]);
 
     useEffect(() => {
       getRestaurantInfo(); 
@@ -44,7 +43,7 @@ const useRestaurant=(resId)=>{
     }
 
 
-    return [restaurant,menuItems];
+    return restaurant;
 }
 
 export default useRestaurant;

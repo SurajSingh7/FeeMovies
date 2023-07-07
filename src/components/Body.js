@@ -12,7 +12,7 @@ const Body=()=>{
        
         const [searchText,setSearchText]=useState();
         const[page,setPage]=useState(1);
-        const ItemInOnePage=5;
+        const ItemInOnePage=20;
       
 
       
@@ -30,12 +30,15 @@ const Body=()=>{
             const data = await fetch(swiggy_api_URL);
             const json = await data.json();
             // updated state variable restaurants with Swiggy API data
-
-            setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-            setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+           
+            // setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+            // setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+            // console.log(json?.data?.cards[2]?.data?.data?.cards);
             
-            // setAllRestaurants(restaurantList);
-            // setFilteredRestaurants(restaurantList);
+            setAllRestaurants(restaurantList);
+            setFilteredRestaurants(restaurantList);
+            
+            console.log(restaurantList);
             
           } catch (error) {
             console.log(error);
@@ -99,8 +102,8 @@ const Body=()=>{
                  Next</button>
      
                  </div>
-
               }
+           
             
         
         </div>
