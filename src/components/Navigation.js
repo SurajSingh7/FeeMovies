@@ -9,7 +9,8 @@ const Navigation=()=>{
    
         
         <ul className="flex justify-between items-center p-3 h-16 bg-pink-100 shadow-lg flex-wrap">
-              <Link to="/">     <l1 className="search-btn p-2 m-2 bg-green-400 hover:bg-gray-500 text-black rounded-md ">HOME </l1>  </Link>
+               <a href="/">     <l1 className="search-btn p-2 m-2 bg-green-400 hover:bg-gray-500 text-black rounded-md ">HOME </l1>  </a>
+              {/* <Link to="/">     <l1 className="search-btn p-2 m-2 bg-green-400 hover:bg-gray-500 text-black rounded-md ">HOME </l1>  </Link> */}
               <Link to="/bollywood" >  <l1 className="search-btn p-2 m-2 bg-green-400 hover:bg-gray-500 text-black rounded-md ">BOLLYWOOD </l1>  </Link>
               <Link to="/southHindiDubbed" >  <l1 className="search-btn p-2 m-2 bg-green-400 hover:bg-gray-500 text-black rounded-md ">SOUTH HINDI DUBBED</l1>  </Link>
               <Link to="/mostViewedMovies" >  <l1 className="search-btn p-2 m-2 bg-green-400 hover:bg-gray-500 text-black rounded-md ">MOST VIEWED MOVIES</l1>  </Link>

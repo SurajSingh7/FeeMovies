@@ -13,8 +13,8 @@ const Body=()=>{
         const [searchText,setSearchText]=useState();
         const[page,setPage]=useState(1);
         const ItemInOnePage=20;
-      
 
+        const [errorMessage, setErrorMessage] = useState("");
       
         const [allRestaurants, setAllRestaurants] = useState([]);
         const [filteredRestaurants, setFilteredRestaurants] = useState([]);
@@ -44,32 +44,48 @@ const Body=()=>{
             console.log(error);
           }
         }
-       
-        
-        
-         
-       
 
+
+          // use searchData function and set condition if data is empty show error message
+        const searchData = (searchText, restaurants) => {
+             if (searchText !== "") {
+                const data = filterData(searchText, restaurants);
+                setFilteredRestaurants(data);
+                 setErrorMessage("");
+                 if (data.length === 0) {
+                 setErrorMessage(
+                `Sorry, we couldn't find any results for "${searchText}"`
+                   );
+                 } 
+                }
+                 else {
+                setErrorMessage("");
+                setFilteredRestaurants(restaurants);
+               }
+             };
+
+     
+       
     return (allRestaurants.length==0)?<Shimmer/>: (
        
        <>
         <div className="search-container p-6 h-8 bg-pink-50  items-center flex justify-center ">
-
+        
             <input type="text" className="search-input w-[500] h-8 flex " placeholder="  Search" 
-             value={searchText} onChange={(e)=>{ setSearchText(e.target.value); }} />
+             value={searchText} onChange={(e)=>{ 
+              setSearchText(e.target.value); 
+              searchData(e.target.value, allRestaurants);
+              }} />
 
             <button className="search-btn p-1  bg-gray-500 hover:bg-pink-400 text-black  " onClick={()=>{  
-              // need to filter the data 
-              const data =filterData(searchText,allRestaurants);
-              // update the state -restaurants
-              // {(searchText==="")? setFilteredRestaurants(allRestaurants): setFilteredRestaurants(data);}
-              setFilteredRestaurants(data);
-            }}>
-            Search</button>
+              searchData(searchText, allRestaurants);
+
+            }}>  Search</button>
 
         </div>
 
       
+        {(errorMessage!="")?<div className="error-container">{errorMessage}</div>:""}
 
         <div className="flex flex-wrap items-center justify-center">
             
