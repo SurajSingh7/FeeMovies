@@ -29,57 +29,119 @@ export const RESTAURANT_TYPE_KEY = "type.googleapis.com/swiggy.presentation.food
 export const restaurantList=[
  {
     data: {
-      id: "410476",
-      name: "Sarrainodu (4K ULTRA HD) Full Hindi Dubbed Movie | Allu Arjun, Rakul Preet Singh, Catherine Tresa",
+      id: "0",
+      name: "pnik(4K ULTRA HD) Full Hindi Dubbed Movie | Allu Arjun, Rakul Preet Singh, Catherine Tresa",
       area:"Download/Watch",
       cloudinaryImageId: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK3rMf7hP-awenUzC0tTfUOL436blrYFjKCQ&usqp=CAU"
      }
  },
  {
   data: {
-    id: "410476",
-    name: "Sarrainodu (4K ULTRA HD) Full Hindi Dubbed Movie | Allu Arjun, Rakul Preet Singh, Catherine Tresa",
+    id: "1",
+    name: "2Asur: Welcome to Your Dark Side (TV Series 2020– ) Asur: Welcome to Your Dark Side (TV Series 2020– ) ",
     area:"Download/Watch",
-    cloudinaryImageId: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK3rMf7hP-awenUzC0tTfUOL436blrYFjKCQ&usqp=CAU"
-  }
-
- },
- {
-
-  data: {
-    id: "410476",
-    name: "Kumar vishwas poet and Ankisha voice poetry20 Drkumarvishwas new poetry love Kumarvishwas statush",
-    area:"Download/Watch",
-    cloudinaryImageId: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK3rMf7hP-awenUzC0tTfUOL436blrYFjKCQ&usqp=CAU"
-  }
- },
- {
-  data: {
-    id: "410476",
-    name: "Sarrainodu (4K ULTRA HD) Full Hindi Dubbed Movie | Allu Arjun, Rakul Preet Singh, Catherine Tresa",
-    area:"Download/Watch",
-    cloudinaryImageId: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK3rMf7hP-awenUzC0tTfUOL436blrYFjKCQ&usqp=CAU"
-  }
-
- },
- {
-  data: {
-    id: "410476",
-    name: "Download Secret Invasion (2023) Season 1 [Episode 1-3 Added] Dual Audio [ORG 5.1 Hindi-English] Disney+ Original 480p | 720p | 1080p | 2160p WEB-DL",
-    area:"Download/Watch",
-    cloudinaryImageId: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK3rMf7hP-awenUzC0tTfUOL436blrYFjKCQ&usqp=CAU"
-  }
-
- },
- {
-  data: {
-    id: "410476",
-    name: "Download Secret Invasion (2023) Season 1 [Episode 1-3 Added] Dual Audio [ORG 5.1 Hindi-English] Disney+ Original 480p | 720p | 1080p | 2160p WEB-DL",
-    area:"Download/Watch",
-    cloudinaryImageId: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK3rMf7hP-awenUzC0tTfUOL436blrYFjKCQ&usqp=CAU"
+    cloudinaryImageId: "https://m.media-amazon.com/images/M/MV5BNjczODVjMmMtNTVlNy00MjlkLWEyZjYtOThiYzMwZmIyNWZkXkEyXkFqcGdeQXVyMTY0NjI3Mjcx._V1_.jpg"
   }
   
- }
+  },
+ {
+  data: {
+    id: "2",
+    name: "K.G.F: Chapter 2 was theatrically released in India on 14 April 2022 in Kannada, along with dubbed versions in Hindi",
+    area:"Download/Watch",
+    cloudinaryImageId: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR-GJWOluiuP4BTtHHg6Kk68cuueul3mwQOMwueqol3kBMrT8c7"
+  }
+
+ },
+ {
+
+  data: {
+    id: "3",
+    name: "Baahubali 2: The Conclusion (2017) Baahubali 2: The Conclusion (2017) Baahubali 2: The Conclusion (2017)",
+    area:"Download/Watch",
+    cloudinaryImageId: "https://m.media-amazon.com/images/M/MV5BMmM3ODk3MDgtZjQwZi00Y2ZhLTg0YTItMTJiNmNjNzRkYmQ4XkEyXkFqcGdeQXVyNzU3Nzk4MDQ@._V1_QL75_UX190_CR0,2,190,281_.jpg"
+  }
+ },
+ {
+  data: {
+    id: "4",
+    name: "Pushpa: The Rule - Part 2 (2023)Pushpa: The Rule - Part 2 (2023)",
+    area:"Download/Watch",
+    cloudinaryImageId: "https://m.media-amazon.com/images/M/MV5BNGZlNTFlOWMtMzUwNC00ZDdhLTk0MWUtOGZjYzFlOTBmNDdhXkEyXkFqcGdeQXVyMTUyNjIwMDEw._V1_.jpg"
+  }
+
+ },
+ {
+  data: {
+    id: "5",
+    name: "Panchayat (TV Series 2020– ) -Panchayat (TV Series 2020– ) -Panchayat (TV Series 2020– ) -",
+    area:"Download/Watch",
+    cloudinaryImageId: "https://m.media-amazon.com/images/M/MV5BMTllYzQ0MzctZTI4Ny00YTE2LTkzYjktMTc4ZWE2MDUxNzk2XkEyXkFqcGdeQXVyNzEyNTM4MTU@._V1_.jpg"
+  }
+
+ },
+ {
+  data: {
+    id: "6",
+    name: "Asur: Welcome to Your Dark Side (TV Series 2020– ) Asur: Welcome to Your Dark Side (TV Series 2020– ) ",
+    area:"Download/Watch",
+    cloudinaryImageId: "https://m.media-amazon.com/images/M/MV5BNjczODVjMmMtNTVlNy00MjlkLWEyZjYtOThiYzMwZmIyNWZkXkEyXkFqcGdeQXVyMTY0NjI3Mjcx._V1_.jpg"
+  }
+  
+ },
+ {
+  data: {
+    id: "7",
+    name: "2pnik(4K ULTRA HD) Full Hindi Dubbed Movie | Allu Arjun, Rakul Preet Singh, Catherine Tresa",
+    area:"Download/Watch",
+    cloudinaryImageId: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK3rMf7hP-awenUzC0tTfUOL436blrYFjKCQ&usqp=CAU"
+   }
+},
+{
+data: {
+  id: "8",
+  name: "2K.G.F: Chapter 2 was theatrically released in India on 14 April 2022 in Kannada, along with dubbed versions in Hindi",
+  area:"Download/Watch",
+  cloudinaryImageId: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR-GJWOluiuP4BTtHHg6Kk68cuueul3mwQOMwueqol3kBMrT8c7"
+}
+
+},
+{
+
+data: {
+  id: "9",
+  name: "2Baahubali 2: The Conclusion (2017) Baahubali 2: The Conclusion (2017) Baahubali 2: The Conclusion (2017)",
+  area:"Download/Watch",
+  cloudinaryImageId: "https://m.media-amazon.com/images/M/MV5BMmM3ODk3MDgtZjQwZi00Y2ZhLTg0YTItMTJiNmNjNzRkYmQ4XkEyXkFqcGdeQXVyNzU3Nzk4MDQ@._V1_QL75_UX190_CR0,2,190,281_.jpg"
+}
+},
+{
+data: {
+  id: "10",
+  name: "2Pushpa: The Rule - Part 2 (2023)Pushpa: The Rule - Part 2 (2023) joo dhikhe ga oo bikega good i am suraj singh",
+  area:"Download/Watch",
+  cloudinaryImageId: "https://m.media-amazon.com/images/M/MV5BNGZlNTFlOWMtMzUwNC00ZDdhLTk0MWUtOGZjYzFlOTBmNDdhXkEyXkFqcGdeQXVyMTUyNjIwMDEw._V1_.jpg"
+}
+
+},
+{
+data: {
+  id: "11",
+  name: "2Panchayat (TV Series 2020– ) -Panchayat (TV Series 2020– ) -Panchayat (TV Series 2020– ) -",
+  area:"Download/Watch",
+  cloudinaryImageId: "https://m.media-amazon.com/images/M/MV5BMTllYzQ0MzctZTI4Ny00YTE2LTkzYjktMTc4ZWE2MDUxNzk2XkEyXkFqcGdeQXVyNzEyNTM4MTU@._V1_.jpg"
+}
+
+},
+{
+data: {
+  id: "12",
+  name: "2Asur: Welcome to Your Dark Side (TV Series 2020– ) Asur: Welcome to Your Dark Side (TV Series 2020– ) ",
+  area:"Download/Watch",
+  cloudinaryImageId: "https://m.media-amazon.com/images/M/MV5BNjczODVjMmMtNTVlNy00MjlkLWEyZjYtOThiYzMwZmIyNWZkXkEyXkFqcGdeQXVyMTY0NjI3Mjcx._V1_.jpg"
+}
+
+}
 
 
 ];

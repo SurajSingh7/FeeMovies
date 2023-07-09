@@ -101,7 +101,6 @@ const Body=()=>{
               }
 
 
-
               {
                  <div className="search-container p-6 w-[1280] h-8 bg-pink-50  items-center flex justify-center ">
 
@@ -119,12 +118,8 @@ const Body=()=>{
      
                  </div>
               }
-           
-            
         
         </div>
-
-       
 
 
         </>
