@@ -4,15 +4,10 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import { createBrowserRouter,Outlet,RouterProvider } from "react-router-dom";
-import About from "./components/About";
-import Error from "./components/Error";
-import Contact from "./components/Contact";
-import Profile from "./components/Profile";
-import RestaurantMenu from "./components/RestaurantMenu";
 import  Navigation from "./components/Navigation";
-import { M2 } from "./components/MenuMovies";
-import { Bollywood,SouthHindiDubbed,MostViewedMovies,EnglishMovies } from "./components/MenuMovies";
-import { PopularMovies,HollywoodHindi,ShortMovies } from "./components/MenuMovies";
+import { BollywoodMovies,SouthHindiDubbed, OldIsGoldMovies} from "./components/TypeMovies";
+import { PopularMovies,HollywoodHindi,WebSeries } from "./components/TypeMovies";
+import MovieMenu from "./components/MovieMenu";
 
 
 
@@ -38,30 +33,20 @@ const appRouter=createBrowserRouter([
                 element:<Body/>
             },
             {
-                path:"/about",
-                element:<About/>,
-                children: [
-                    {
-                      path: "profile", 
-                      element: <Profile />,
-                    },
-                  ],
-            },
-            {
-                path:"/bollywood",
-                element:< Bollywood/>
+                path:"/bollywoodMovies",
+                element:< BollywoodMovies/>
             },
             {
                 path:"/southHindiDubbed",
                 element:< SouthHindiDubbed/>
             },
             {
-                path:"/mostViewedMovies",
-                element:< MostViewedMovies/>
+                path:"/oldIsGoldMovies",
+                element:< OldIsGoldMovies/>
             },
             {
-                path:"/englishMovies",
-                element:< EnglishMovies/>
+                path:"/webSeries",
+                element:<WebSeries/>
             },
             {
                 path:"/popularMovies",
@@ -72,12 +57,8 @@ const appRouter=createBrowserRouter([
                 element:< HollywoodHindi/>
             },
             {
-                path:"/shortMovies",
-                element:< ShortMovies/>
-            },
-            {
-                path:"/restaurant/:resId",
-                element:<RestaurantMenu/>
+                path:"/movie/:resId",
+                element:<MovieMenu/>
             }
         ]   
     }

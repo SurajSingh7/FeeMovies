@@ -1,9 +1,16 @@
-export function filterData(searchText, restaurants) {
+export function filterData(searchText, movies) {
   
-    const filterData = restaurants.filter((restaurant) =>
-      restaurant?.data?.name?.toLowerCase().includes(searchText?.toLowerCase())
+    const filterData = movies.filter((movie) =>
+      movie?.name?.toLowerCase().includes(searchText?.toLowerCase())
     );
     return filterData;
   }
 
+  export function filterDataType(searchText, movies) {
+  
+    const filterDataType = movies.filter((movie) =>
+      movie?.movieType?.toLowerCase().includes(searchText?.toLowerCase())
+    );
+    return filterDataType;
+  }
 

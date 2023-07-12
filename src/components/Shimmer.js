@@ -15,21 +15,3 @@ const Shimmer =()=>{
 }
 
 export default Shimmer;
-
-
-
-// className="card w-56 h-80 p-2 m-2 shadow-lg bg-gray-300"
-
-// const Shimmer =()=>{
-//     return(
-       
-//         <div className="search-container p-6 h-8 bg-pink-50 my- items-center flex justify-center "> </div>
-        
-//         <div className=" flex flex-wrap ">
-          
-
-//         </div>    
-//     )
-// }
-
-// export default Shimmer;

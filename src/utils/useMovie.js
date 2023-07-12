@@ -1,17 +1,17 @@
 import { useState,useEffect} from "react";
-import { restaurantList } from "./constants";
+import { moviesList } from "./constants";
 
 
-const useRestaurant=(resId)=>{
+const useMovie=(resId)=>{
   
     
-    const [restaurant, setRestaurant] = useState(null); 
+    const [movie, setMovie] = useState(null); 
 
     useEffect(() => {
-      getRestaurantInfo(); 
+      getMovieInfo(); 
     }, []);
   
-    async function getRestaurantInfo() {
+    async function getMovieInfo() {
       try {
         // const data = await fetch(swiggy_api_URL);
         // const json = await data.json();
@@ -20,9 +20,10 @@ const useRestaurant=(resId)=>{
         // setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
         // setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
         // console.log(json?.data?.cards[2]?.data?.data?.cards);
-        setRestaurant(restaurantList[resId]);
+        setMovie(moviesList[resId]);
+        // setRestaurant(restaurantList[resId]);
         
-        console.log(restaurantList[resId]);
+        // console.log(restaurantList[resId]);
         // console.log(restaurantList);
         
       } catch (error) {
@@ -31,7 +32,7 @@ const useRestaurant=(resId)=>{
     }
 
 
-    return restaurant;
+    return movie;
 }
 
-export default useRestaurant;
+export default useMovie;

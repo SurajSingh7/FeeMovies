@@ -1,6 +1,6 @@
 // Body part- 2
-import { restaurantList,swiggy_api_URL } from "../utils/constants";
-import RestaurantCard from "./RestaurantCard";
+import { moviesList} from "../utils/constants";
+import MovieCard from "./MovieCard";
 import { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
@@ -16,29 +16,25 @@ const Body=()=>{
 
         const [errorMessage, setErrorMessage] = useState("");
       
-        const [allRestaurants, setAllRestaurants] = useState([]);
-        const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+        const [allMovies, setAllMovies] = useState([]);
+        const [filteredMovies, setFilteredMovies] = useState([]);
 
         useEffect(()=>{
-           getRestaurants();
+           getMovies();
         },[]);
 
         
-        async function getRestaurants() {
+        async function getMovies() {
           // handle the error using try... catch
           try {
-            const data = await fetch(swiggy_api_URL);
-            const json = await data.json();
-            // updated state variable restaurants with Swiggy API data
-           
+            // const data = await fetch(swiggy_api_URL);
+            // const json = await data.json();
             // setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
             // setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
             // console.log(json?.data?.cards[2]?.data?.data?.cards);
             
-            setAllRestaurants(restaurantList);
-            setFilteredRestaurants(restaurantList);
-            
-            console.log(restaurantList);
+            setAllMovies(moviesList);
+            setFilteredMovies(moviesList);
             
           } catch (error) {
             console.log(error);
@@ -47,10 +43,10 @@ const Body=()=>{
 
 
           // use searchData function and set condition if data is empty show error message
-        const searchData = (searchText, restaurants) => {
-             if (searchText !== "") {
-                const data = filterData(searchText, restaurants);
-                setFilteredRestaurants(data);
+        const searchData = (searchText, movies) => {
+             if (searchText !== "" && searchText!=null) {
+                const data = filterData(searchText, movies);
+                setFilteredMovies(data)
                  setErrorMessage("");
                  if (data.length === 0) {
                  setErrorMessage(
@@ -60,13 +56,13 @@ const Body=()=>{
                 }
                  else {
                 setErrorMessage("");
-                setFilteredRestaurants(restaurants);
+                setFilteredMovies(movies);
                }
              };
 
      
        
-    return (allRestaurants.length==0)?<Shimmer/>: (
+    return (allMovies.length==0)?<Shimmer/>: (
        
        <>
         <div className="search-container p-6 h-8 bg-pink-50  items-center flex justify-center ">
@@ -74,11 +70,11 @@ const Body=()=>{
             <input type="text" className="search-input w-[500] h-8 flex " placeholder="  Search" 
              value={searchText} onChange={(e)=>{ 
               setSearchText(e.target.value); 
-              searchData(e.target.value, allRestaurants);
+              searchData(e.target.value, allMovies);
               }} />
 
             <button className="search-btn p-1  bg-gray-500 hover:bg-pink-400 text-black  " onClick={()=>{  
-              searchData(searchText, allRestaurants);
+              searchData(searchText, allMovies);
 
             }}>  Search</button>
 
@@ -91,10 +87,10 @@ const Body=()=>{
             
               
                {
-                filteredRestaurants.slice(ItemInOnePage*(page-1),page*ItemInOnePage).map((restaurant) =>{
+                filteredMovies.slice(ItemInOnePage*(page-1),page*ItemInOnePage).map((movie) =>{
                     return(
-                       <Link to={"/restaurant/"+restaurant.data.id} key={restaurant.data.id} >
-                          <RestaurantCard {...restaurant.data} />
+                       <Link to={"/movie/"+movie.id} key={movie.id} >
+                          <MovieCard {...movie} />
                         </Link>  
                     );
                 })
@@ -105,14 +101,16 @@ const Body=()=>{
                  <div className="search-container p-6 w-[1280] h-8 bg-pink-50  items-center flex justify-center ">
 
                    <button className="search-btn p-1  bg-gray-500 hover:bg-pink-400 text-black rounded-sm  " onClick={()=>{  
-                      {(page<=1)?setPage(Math.ceil(filteredRestaurants.length/ItemInOnePage)):setPage(page-1)}
+                      {(page<=1)?setPage(Math.ceil(filteredMovies.length/ItemInOnePage)):setPage(page-1)}
                  }}>
                  Prev</button>
 
-                <div className="bg-white p-1 pl-3 pr-4"> <h1>  {page} of {Math.ceil(filteredRestaurants.length/ItemInOnePage)}  </h1> </div>
+                <div className="bg-white p-1 pl-3 pr-4">
+                   <h1> {page==0?1:page} of {Math.ceil(filteredMovies.length/ItemInOnePage)==0?1:Math.ceil(filteredMovies.length/ItemInOnePage)} </h1>
+                </div>
 
                  <button className="search-btn p-1  bg-gray-500 hover:bg-pink-400 text-black rounded-sm " onClick={()=>{  
-                   {(page>=Math.ceil(filteredRestaurants.length/ItemInOnePage))?setPage(1):setPage(page+1)}
+                   {(page>=Math.ceil(filteredMovies.length/ItemInOnePage))?setPage(1):setPage(page+1)}
                  }}>
                  Next</button>
      
